@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
             ${details.participants.length > 0 ? `
               <ul class="participants-list">
                 ${details.participants.map((participant) => `
-                  <li>
-                    <span>${participant}</span>
-                    <button class="remove-participant" data-activity="${name}" data-email="${participant}" aria-label="Remove ${participant}">&times;</button>
+                  <li class="participant-item">
+                    <span class="participant-name">${participant}</span>
+                    <button type="button" class="remove-participant" data-activity="${name}" data-email="${participant}" aria-label="Remove ${participant}">&times;</button>
                   </li>
                 `).join("")}
               </ul>
@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
+        await fetchActivities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";

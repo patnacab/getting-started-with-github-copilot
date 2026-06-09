@@ -88,13 +88,32 @@ section h3 {
 
 .participants-list {
   list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   color: #555;
 }
 
-.participants-list li {
+.participant-item {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.participants-list li:last-child {
+  margin-bottom: 0;
+}
+
+.participant-name {
+  color: #333;
+  word-break: break-word;
+}
   align-items: center;
   justify-content: space-between;
   gap: 12px;
